@@ -1,0 +1,15 @@
+<h1>Organise your movies & favourite shows!</h1>
+
+<div class="container">
+<ol>
+<% @lists.each do |l| %>
+  <li class="card"><%= link_to l.name, list_path(l) %></li>
+<% end %>
+</ol>
+</div>
+
+<%= link_to "Create list", new_list_path(@list)%>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+  </div>
+</div>

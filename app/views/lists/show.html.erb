@@ -1,0 +1,17 @@
+<h1><%= @list.name %></h1>
+<%= link_to 'Back to lists', lists_path %>
+
+<p><strong>Bookmarks here!!</strong></p>
+<ul class="list-group">
+  <% @list.bookmarks.each do |bookmark| %>
+  <br>
+    <h1><li class="list-group-item"><%= bookmark.comment %></li></h1>
+    <h3><li class="list-group-item"><%= bookmark.movie.title %></li></h3>
+    <h5><li class="list-group-item"><%= bookmark.movie.overview %></li></h5>
+    <h5><li class="list-group-item"><%= bookmark.movie.rating %></li></h5>
+  <% end %>
+</ul>
+<br>
+
+
+<%= link_to 'New Bookmark', new_list_bookmark_path(@list)%>
